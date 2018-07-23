@@ -2,3 +2,4 @@ Vidly/bin/
 Vidly/obj/
 packages/
 .vs/
+*.csproj.user
