@@ -18,11 +18,11 @@ namespace Vidly.Models
         public DateTime DateAdded { get; set; }
 
         [Required]
-        public int NumberInStack { get; set; }
+        public int NumberInStock { get; set; }
 
-        [Required]
         public Genre Genre { get; set; }
 
+        [Required]
         public int GenreId { get; set; }
     }
 }
