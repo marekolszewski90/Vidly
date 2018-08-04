@@ -9,25 +9,68 @@
 
 @Html.ActionLink("NEW MOVIE", "New", "Movies", new { @class = "btn btn-primary" })
 
-@if (Model.Any())
-{
-    <table class="table table-bordered table-hover">
+<table id="moviesTable" class="table table-bordered table-hover">
+    <thead>
         <tr>
             <th>Movie</th>
             <th>Genre</th>
+            <th>Delete</th>
         </tr>
+    </thead>
+    <tbody></tbody>
+</table>
 
-        @foreach (var movie in Model)
-        {
-        <tr>
-            <td>@Html.ActionLink(movie.Name, "Edit", new { id = movie.Id })</td>
-            <td>@movie.Genre.Name</td>
-        </tr>
-        }
-    </table>
-}
-else
+
+@section scripts
 {
-    <text>We don't have any movies yet.</text>
-}
+    <script>
+        $(document).ready(function () {
 
+            var table = $("#moviesTable").DataTable({
+                ajax: {
+                    url: "/Vidly/Api/Movies",
+                    dataSrc: "",
+                },
+                columns: [
+                    {
+                        data: "name",
+                        render: function (data, type, movie) {
+                            return "<a href='/Movies/Edit/" + movie.id + "'>" + movie.name + "</a>"
+                        }
+                    },
+                    {
+                        data: "genre.name"
+                    },
+                    {
+                        data: "id",
+                        render: function (data) {
+                            return "<button class='btn-link js-delete' data-movie-id=" + data + ">Delete</button>";
+                        }
+                    }
+
+                ]
+            });
+
+            $("#moviesTable").on("click", ".js-delete", function () {
+                var button = $(this);
+                var url = "Api/Customers/" + button.attr("data-customer-id");
+                bootbox.confirm("Delete this movie?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "Api/Movies/" + button.attr("data-movie-id"),
+                            method: "DELETE",
+                            success: function () {
+                                console.log("Deleted");
+                                table.row(button.parents("tr")).remove().draw();
+                            },
+                            error: function () {
+                                console.log("not deleted");
+                            }
+                        })
+                    }
+                })
+            })
+        });
+    </script>
+    
+}
