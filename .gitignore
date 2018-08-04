@@ -3,3 +3,4 @@ Vidly/obj/
 packages/
 .vs/
 *.csproj.user
+Deploy/
