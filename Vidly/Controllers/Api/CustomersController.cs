@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Web.Http;
+using System.Data.Entity;
 using Vidly.Dtos;
 using Vidly.Models;
 
@@ -21,7 +22,9 @@ namespace Vidly.Controllers.Api
 
         public IEnumerable<CustomerDto> GetCustomers()
         {
-            return ApplicationDbContext.Customers.ToList().Select(Mapper.Map<Customer, CustomerDto>);
+            return ApplicationDbContext.Customers
+                .Include(c => c.MembershipType)
+                .Select(Mapper.Map<Customer, CustomerDto>);
         }
 
         public IHttpActionResult GetCustomer(int id)
@@ -64,6 +67,7 @@ namespace Vidly.Controllers.Api
             ApplicationDbContext.SaveChanges();
         }
 
+        [HttpDelete]
         public void DeleteCustomer(int id)
         {
             var customerInDb = ApplicationDbContext.Customers.SingleOrDefault(c => c.Id == id);
