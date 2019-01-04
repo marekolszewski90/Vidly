@@ -6,17 +6,20 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>C:\Users\Mario\Desktop\Deploy</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\Users\Mario\ZZ\Workspace\Vidly\Vidly\Publish\Debug</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
+    <File Include="404.html">
+      <publishTime>01/04/2019 13:57:46</publishTime>
+    </File>
     <File Include="ApplicationInsights.config">
       <publishTime>08/05/2018 13:13:03</publishTime>
     </File>
-    <File Include="App_Data/VidlyDb.mdf">
-      <publishTime>01/04/2019 12:17:51</publishTime>
+    <File Include="AppSettings.config">
+      <publishTime>01/04/2019 13:41:34</publishTime>
     </File>
-    <File Include="App_Data/VidlyDb_log.ldf">
-      <publishTime>01/04/2019 12:17:51</publishTime>
+    <File Include="App_Readme/Elmah.txt">
+      <publishTime>01/04/2019 14:01:41</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>09/10/2013 16:29:20</publishTime>
@@ -29,6 +32,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="bin/AutoMapper.dll">
       <publishTime>10/22/2015 01:39:56</publishTime>
+    </File>
+    <File Include="bin/Elmah.dll">
+      <publishTime>04/12/2012 19:19:36</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>10/23/2017 13:15:18</publishTime>
@@ -289,10 +295,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/01/2018 12:20:56</publishTime>
     </File>
     <File Include="bin/Vidly.dll">
-      <publishTime>01/04/2019 12:27:59</publishTime>
+      <publishTime>01/04/2019 20:33:29</publishTime>
     </File>
     <File Include="bin/Vidly.pdb">
-      <publishTime>01/04/2019 12:27:59</publishTime>
+      <publishTime>01/04/2019 20:33:29</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>01/23/2014 13:57:34</publishTime>
@@ -994,7 +1000,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/05/2018 13:13:03</publishTime>
     </File>
     <File Include="Views/Customers/CustomerIndex.cshtml">
-      <publishTime>01/04/2019 09:35:03</publishTime>
+      <publishTime>01/04/2019 20:25:51</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
       <publishTime>08/05/2018 13:13:03</publishTime>
@@ -1030,16 +1036,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/05/2018 13:13:03</publishTime>
     </File>
     <File Include="Views/Movies/MovieIndex.cshtml">
-      <publishTime>01/04/2019 10:48:24</publishTime>
+      <publishTime>01/04/2019 19:47:07</publishTime>
     </File>
     <File Include="Views/Movies/MovieIndexReadOnly.cshtml">
-      <publishTime>01/04/2019 09:38:31</publishTime>
+      <publishTime>01/04/2019 19:47:15</publishTime>
     </File>
     <File Include="Views/Movies/Random.cshtml">
       <publishTime>08/05/2018 13:13:03</publishTime>
     </File>
     <File Include="Views/Rental/NewRental.cshtml">
-      <publishTime>01/04/2019 12:11:34</publishTime>
+      <publishTime>01/04/2019 20:14:39</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>08/05/2018 13:13:03</publishTime>
@@ -1063,7 +1069,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/05/2018 13:13:03</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/04/2019 12:28:00</publishTime>
+      <publishTime>01/04/2019 20:33:29</publishTime>
     </File>
   </ItemGroup>
 </Project>

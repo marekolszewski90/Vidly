@@ -26,7 +26,7 @@
         $(document).ready(function () {
             var table = $("#customersTable").DataTable({
                 ajax: {
-                    url: "/api/customers",
+                    url: "@Url.Content("~")Api/customers",
                     dataSrc: "",
                 },
                 columns: [
@@ -49,7 +49,7 @@
             });
             $("#customersTable").on("click", ".js-delete", function () {
                 var button = $(this);
-                var urll = "Api/Customers/" + button.attr("data-customer-id");
+                var urll = "@Url.Content("~")Api/Customers/" + button.attr("data-customer-id");
                 bootbox.confirm("Delete this customer?", function (result) {
                     if (result) {
                         $.ajax({

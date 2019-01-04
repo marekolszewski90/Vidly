@@ -28,7 +28,7 @@
 
             var table = $("#moviesTable").DataTable({
                 ajax: {
-                    url: "/api/Movies",
+                    url: "@Url.Content("~")Api/Movies",
                     dataSrc: "",
                 },
                 columns: [
@@ -53,11 +53,11 @@
 
             $("#moviesTable").on("click", ".js-delete", function () {
                 var button = $(this);
-                var url = "Api/Customers/" + button.attr("data-customer-id");
+                var url = "@Url.Content("~")Api/Customers/" + button.attr("data-customer-id");
                 bootbox.confirm("Delete this movie?", function (result) {
                     if (result) {
                         $.ajax({
-                            url: "Api/Movies/" + button.attr("data-movie-id"),
+                            url: "@Url.Content("~")Api/Movies/" + button.attr("data-movie-id"),
                             method: "DELETE",
                             success: function () {
                                 console.log("Deleted");

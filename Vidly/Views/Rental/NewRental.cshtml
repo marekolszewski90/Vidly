@@ -37,7 +37,7 @@
                 datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
                 queryTokenizer: Bloodhound.tokenizers.whitespace,
                 remote: {
-                    url: '/api/customers?query=%QUERY',
+                    url: '@Url.Content("~")Api/customers?query=%QUERY',
                     wildcard: '%QUERY'
                 }
             });
@@ -58,7 +58,7 @@
                 datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
                 queryTokenizer: Bloodhound.tokenizers.whitespace,
                 remote: {
-                    url: '/api/movies?query=%QUERY',
+                    url: '@Url.Content("~")Api/movies?query=%QUERY',
                     wildcard: '%QUERY'
                 }
             });
@@ -92,13 +92,13 @@
                     e.preventDefault();
 
                     $.ajax({
-                        url: "/api/newRentals",
+                        url: "@Url.Content("~")Api/newRentals",
                         method: "post",
                         data: vm
                     })
                         .done(function () {
                             toastr.success("Rentals successfully recorded.");
-                            $("#cusotmer").typeahead("val", "");
+                            $("#customer").typeahead("val", "");
                             $("#movie").typeahead("val", "");
                             $("#movies").empty();
 

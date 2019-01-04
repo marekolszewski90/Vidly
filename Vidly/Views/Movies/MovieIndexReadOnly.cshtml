@@ -23,7 +23,7 @@
 
             var table = $("#moviesTable").DataTable({
                 ajax: {
-                    url: "/Api/Movies",
+                    url: "@Url.Content("~")Api/Movies",
                     dataSrc: "",
                 },
                 columns: [
