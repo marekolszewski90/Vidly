@@ -4,3 +4,4 @@ packages/
 .vs/
 *.csproj.user
 Deploy/
+Vidly/Publish/
