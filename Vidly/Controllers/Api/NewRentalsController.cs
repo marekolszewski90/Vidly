@@ -27,7 +27,7 @@ namespace Vidly.Controllers.Api
 
             Customer customer = ApplicationDbContext.Customers.Single(c => c.Id == newRentalDto.CustomerId);
 
-            var movies = ApplicationDbContext.Movies.Where(m => newRentalDto.MoviesIds.Contains(m.Id));
+            var movies = ApplicationDbContext.Movies.Where(m => newRentalDto.MovieIds.Contains(m.Id));
 
             foreach (Movie movie in movies)
             {

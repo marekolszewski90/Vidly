@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<Vidly.Models.Movie>
+
+@{
     ViewBag.Title = "MovieIndex";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -26,7 +28,7 @@
 
             var table = $("#moviesTable").DataTable({
                 ajax: {
-                    url: "/Vidly/Api/Movies",
+                    url: "/api/Movies",
                     dataSrc: "",
                 },
                 columns: [

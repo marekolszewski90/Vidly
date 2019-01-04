@@ -1,14 +1,15 @@
 ﻿@model IEnumerable<Vidly.Models.Customer>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Cusotmer Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Customers</h2>
 
 @Html.ActionLink("NEW CUSTOMER", "New", "Customers", new { @class = "btn btn-primary" })
-<table id="customers" class="table table-bordered table-hover">
+
+<table id="customersTable" class="table table-bordered table-hover">
     <thead>
         <tr>
             <th>Customer</th>
@@ -23,9 +24,9 @@
 {
     <script>
         $(document).ready(function () {
-            var table = $("#customers").DataTable({
+            var table = $("#customersTable").DataTable({
                 ajax: {
-                    url: "/Vidly/api/customers",
+                    url: "/api/customers",
                     dataSrc: "",
                 },
                 columns: [
@@ -46,7 +47,7 @@
                     }
                 ]
             });
-            $("#customers").on("click", ".js-delete", function () {
+            $("#customersTable").on("click", ".js-delete", function () {
                 var button = $(this);
                 var urll = "Api/Customers/" + button.attr("data-customer-id");
                 bootbox.confirm("Delete this customer?", function (result) {
